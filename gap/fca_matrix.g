@@ -7,26 +7,6 @@ Boole := function(b)
     fi;
 end;
 
-# Sort the rows of a binary matrix in DECREASING lex order
-# Assumed m is a matrix (i.e. all rows have same length)
-# Modifies m in place!
-SortRows := function(m)
-    local CompareRows;
-    if Length(m) = 0 then
-        return [];
-    fi;
-    CompareRows := function(r1, r2)
-        local i;
-        for i in [1..Length(r1)] do
-            if r1[i] > r2[i] then
-                return true;
-            fi;
-        od;
-        return false;
-    end;
-    Sort(m, CompareRows);
-end;
-
 # Only works for abelian groups!
 FCAMatrixSaturated_Abelian := function(G)
     local subgroups, nontrivial_subgroups, direct_edges, result;
@@ -42,11 +22,12 @@ FCAMatrixSaturated_Abelian := function(G)
     result := List(direct_edges, e -> List(nontrivial_subgroups,
         h -> Boole((not IsSubgroup(e[2],h)) or IsSubgroup(e[1],h))
     ));
-    SortRows(result);
+    SortBy(result, r -> -Reversed(r));
     return result;
 end;
 
 # Only works for abelian groups!
+# Called by FCAMatrix for faster processing of abelian groups
 FCAMatrix_Abelian := function(G)
     local subgroups, edges, result;
     subgroups := AllSubgroups(G);
@@ -62,7 +43,7 @@ FCAMatrix_Abelian := function(G)
                 (not IsSubgroup(e[1],f[1])) or (not IsSubgroup(e[2],f[2])) or IsSubgroup(e[1],f[2])
             )
     ));
-    SortRows(result);
+    SortBy(result, r -> -Reversed(r));
     return result;
 end;
 
@@ -87,7 +68,7 @@ FCAMatrix := function(G)
                 ForAll(fs, f -> (not IsSubgroup(es[1][1],f[1])) or (not IsSubgroup(es[1][2],f[2])) or IsSubgroup(es[1][1],f[2]))
             )
     ));
-    SortRows(result);
+    SortBy(result, r -> -Reversed(r));
     return result;
 end;
 
