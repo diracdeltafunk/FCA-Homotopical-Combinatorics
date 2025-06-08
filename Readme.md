@@ -223,7 +223,7 @@ Python code for processing and manipulating formal contexts. This is provided as
 
 ### pcbo
 
-A modified version of PCbO for enumerating formal concepts.
+A modified version of [PCbO](https://fcalgs.sourceforge.net/pcbo-amai.html) for enumerating formal concepts.
 
 #### Building PCbO
 
