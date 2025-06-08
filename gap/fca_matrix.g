@@ -8,29 +8,28 @@ Boole := function(b)
 end;
 
 # Sort the rows of a binary matrix in DECREASING lex order
+# Assumed m is a matrix (i.e. all rows have same length)
+# Modifies m in place!
 SortRows := function(m)
-    local RowToInt, rowvals, permlist, perm_matrix;
+    local CompareRows;
     if Length(m) = 0 then
         return [];
     fi;
-    RowToInt := function(r)
-        local result, i;
-        result := 0;
-        for i in [1..Length(r)] do
-            result := result + r[i]*2^(i-1);
+    CompareRows := function(r1, r2)
+        local i;
+        for i in [1..Length(r1)] do
+            if r1[i] > r2[i] then
+                return true;
+            fi;
         od;
-        return result;
+        return false;
     end;
-    rowvals := List(m, RowToInt);
-    permlist := [1..Length(rowvals)];
-    SortParallel(rowvals, permlist);
-    perm_matrix := PermutationMat(PermList(Reversed(permlist)),Length(rowvals));
-    return perm_matrix * m;
+    Sort(m, CompareRows);
 end;
 
 # Only works for abelian groups!
 FCAMatrixSaturated_Abelian := function(G)
-    local subgroups, nontrivial_subgroups, direct_edges;
+    local subgroups, nontrivial_subgroups, direct_edges, result;
     subgroups := AllSubgroups(G);
     nontrivial_subgroups := Filtered(subgroups, h -> Order(h) > 1);
     direct_edges := Concatenation(List(
@@ -40,14 +39,16 @@ FCAMatrixSaturated_Abelian := function(G)
                 x -> [h,x]
             )
     ));
-    return List(direct_edges, e -> List(nontrivial_subgroups,
+    result := List(direct_edges, e -> List(nontrivial_subgroups,
         h -> Boole((not IsSubgroup(e[2],h)) or IsSubgroup(e[1],h))
     ));
+    SortRows(result);
+    return result;
 end;
 
 # Only works for abelian groups!
 FCAMatrix_Abelian := function(G)
-    local subgroups, edges;
+    local subgroups, edges, result;
     subgroups := AllSubgroups(G);
     edges := Concatenation(List(
         subgroups,
@@ -56,16 +57,19 @@ FCAMatrix_Abelian := function(G)
                 x -> [h,x]
             )
     ));
-    return SortRows(List(edges, e -> List(edges,
+    result := List(edges, e -> List(edges,
         f -> Boole(
                 (not IsSubgroup(e[1],f[1])) or (not IsSubgroup(e[2],f[2])) or IsSubgroup(e[1],f[2])
             )
-    )));
+    ));
+    SortRows(result);
+    return result;
 end;
 
 # Produces the FCA matrix (list of lists of 0's and 1's) for a group G
+# Sorted
 FCAMatrix := function(G)
-    local subgroups, edges, ccedges;
+    local subgroups, edges, ccedges, result;
     if IsAbelian(G) then
         return FCAMatrix_Abelian(G);
     fi;
@@ -78,11 +82,13 @@ FCAMatrix := function(G)
             )
     ));
     ccedges := OrbitsDomain(G, edges, OnTuples);
-    return SortRows(List(ccedges, es -> List(ccedges,
+    result := List(ccedges, es -> List(ccedges,
         fs -> Boole(
                 ForAll(fs, f -> (not IsSubgroup(es[1][1],f[1])) or (not IsSubgroup(es[1][2],f[2])) or IsSubgroup(es[1][1],f[2]))
             )
-    )));
+    ));
+    SortRows(result);
+    return result;
 end;
 
 # Same as DatToFile but prints to stdout
