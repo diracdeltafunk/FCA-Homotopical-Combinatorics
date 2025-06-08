@@ -188,8 +188,8 @@ Python code for processing and manipulating formal contexts. This is provided as
 
     By default, 0's become black pixels and 1's become white pixels. You can invert the colors by setting `inverted=True`, and you can change the size of the pixels by setting `PIXEL_SIZE`.
 
-    > [!WARNING]
-    > For large matrices, compiling one of these tikz pictures can easily blow through all of your LaTeX compiler's memory. Tikz is not the right software to use if you want to draw a large image pixel-by-pixel! See the [mathematica](#mathematica) section below for a better way to produce these images.
+> [!WARNING]
+> For large matrices, compiling one of these tikz pictures can easily blow through all of your LaTeX compiler's memory. Tikz is not the right software to use if you want to draw a large image pixel-by-pixel! See the [mathematica](#mathematica) section below for a better way to produce these images.
 
 * `dat_str()`. Returns a string representing the context in `.dat` format. Example:
 
