@@ -218,8 +218,8 @@ Python code for processing and manipulating formal contexts. This is provided as
 
 * `complexity()`. Returns the complexity of the context, i.e. the dimension of the largest subcontext which is a contranomial scale. See [Demonstration 2](#demonstration-2) for an example.
 
-    > [!WARNING]
-    > Computing the complexity of a context is a #P-hard problem. You should expect this to take ~exponential time in the size of the matrix.
+> [!WARNING]
+> Computing the complexity of a context is a #P-hard problem. You should expect this to take ~exponential time in the size of the matrix.
 
 ### pcbo
 
