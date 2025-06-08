@@ -1,0 +1,261 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 14.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      8001,        251]
+NotebookOptionsPosition[      7431,        233]
+NotebookOutlinePosition[      7827,        249]
+CellTagsIndexPosition[      7784,        246]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[{
+ "Computing Densities for ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"[", 
+       SubscriptBox["n", "1"], "]"}], "\[Cross]"}], "..."}], "\[Cross]", 
+    RowBox[{"[", 
+     SubscriptBox["n", "k"], "]"}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "98121c58-9121-455d-b8f7-1079c45270fb"]
+}], "Title",
+ CellChangeTimes->{{3.958239886924759*^9, 3.9582399428764277`*^9}, {
+  3.958240098280129*^9, 
+  3.958240153665036*^9}},ExpressionUUID->"96adc7a1-0188-4a8b-af67-\
+81ac0f4cbdde"],
+
+Cell[TextData[{
+ "NumZerosGrid[k] returns a formula for the number of 0\[CloseCurlyQuote]s in \
+the reduced context matrix for the lattice of transfer systems on ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"[", 
+       SubscriptBox["n", "1"], "]"}], "\[Cross]"}], "..."}], "\[Cross]", 
+    RowBox[{"[", 
+     SubscriptBox["n", "k"], "]"}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "fd8d97e0-8d8b-4d60-96de-64f512624278"],
+ ", in terms of ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["n", "1"], ",", "...", ",", 
+    SubscriptBox["n", "k"]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "608431fd-cd7b-416c-8534-5adaaebc7ad4"],
+ "\nNumRowsGrid[k] returns a formula for the number of rows in the reduced \
+context matrix for the lattice of transfer systems on ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"[", 
+       SubscriptBox["n", "1"], "]"}], "\[Cross]"}], "..."}], "\[Cross]", 
+    RowBox[{"[", 
+     SubscriptBox["n", "k"], "]"}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "5ec73153-601d-48fd-b140-1a19b1a9fc0c"],
+ ", in terms of ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["n", "1"], ",", "...", ",", 
+    SubscriptBox["n", "k"]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "62cd430c-c409-4230-ad3e-29d265082d8f"],
+ "\nCodensityGrid[k] returns a formula for 1 minus the density of the reduced \
+context matrix for the lattice of transfer systems on ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"[", 
+       SubscriptBox["n", "1"], "]"}], "\[Cross]"}], "..."}], "\[Cross]", 
+    RowBox[{"[", 
+     SubscriptBox["n", "k"], "]"}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "6b6eecd5-4d14-44b7-bba1-e61ab91135b2"],
+ ", in terms of ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["n", "1"], ",", "...", ",", 
+    SubscriptBox["n", "k"]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "b39c1fa7-7772-4b93-ad97-b24f72951936"],
+ "\nLimitingDensityGrid[k] returns the limit as ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["n", "1"], ",", "...", ",", 
+    RowBox[{
+     SubscriptBox["n", "k"], "->", "\[Infinity]"}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "3e257d30-e6b2-4ab6-8167-7f1abe3cb0c6"],
+ " of the density of the reduced context matrix for the the lattice of \
+transfer systems on ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"[", 
+       SubscriptBox["n", "1"], "]"}], "\[Cross]"}], "..."}], "\[Cross]", 
+    RowBox[{"[", 
+     SubscriptBox["n", "k"], "]"}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "053f137f-a5e8-4c49-a7dd-6d8b8684903f"]
+}], "Text",
+ CellChangeTimes->{{3.958239953445702*^9, 3.9582400770327177`*^9}, {
+  3.9582401595257387`*^9, 
+  3.95824024395595*^9}},ExpressionUUID->"ddffd6b8-8b05-480d-a6d9-\
+518205cc7f35"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"NumZerosGrid", "[", "k_", "]"}], ":=", 
+  RowBox[{"Sum", "@@", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Product", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"z", "[", "i", "]"}], "-", 
+          RowBox[{"x", "[", "i", "]"}], "+", "1"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", "1", ",", "k"}], "}"}]}], "]"}], "-", 
+       RowBox[{"Product", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"z", "[", "i", "]"}], "-", 
+          RowBox[{"y", "[", "i", "]"}], "+", "1"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", "1", ",", "k"}], "}"}]}], "]"}]}], "}"}], "~", 
+     "Join", "~", 
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"x", "[", "i", "]"}], ",", "0", ",", 
+         RowBox[{"n", "[", "i", "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"i", ",", "1", ",", "k"}], "}"}]}], "]"}], "~", "Join", "~", 
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"y", "[", "i", "]"}], ",", 
+         RowBox[{"x", "[", "i", "]"}], ",", 
+         RowBox[{"n", "[", "i", "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"i", ",", "1", ",", "k"}], "}"}]}], "]"}], "~", "Join", "~", 
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"z", "[", "i", "]"}], ",", 
+         RowBox[{"y", "[", "i", "]"}], ",", 
+         RowBox[{"n", "[", "i", "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"i", ",", "1", ",", "k"}], "}"}]}], "]"}]}], 
+    ")"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"NumRowsGrid", "[", "k_", "]"}], ":=", 
+  RowBox[{"Sum", "@@", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Product", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"n", "[", "i", "]"}], "-", 
+          RowBox[{"x", "[", "i", "]"}], "+", "1"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", "1", ",", "k"}], "}"}]}], "]"}], "-", "1"}], 
+      "}"}], "~", "Join", "~", 
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"x", "[", "i", "]"}], ",", "0", ",", 
+         RowBox[{"n", "[", "i", "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"i", ",", "1", ",", "k"}], "}"}]}], "]"}]}], 
+    ")"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"CodensityGrid", "[", "k_", "]"}], ":=", 
+   RowBox[{
+    RowBox[{"NumZerosGrid", "[", "k", "]"}], "/", 
+    RowBox[{
+     RowBox[{"NumRowsGrid", "[", "k", "]"}], "^", "2"}]}]}], 
+  " "}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"LimitingDensityGrid", "[", "k_", "]"}], ":=", 
+  RowBox[{"1", "-", 
+   RowBox[{"Limit", "[", 
+    RowBox[{
+     RowBox[{"CodensityGrid", "[", "k", "]"}], ",", 
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"n", "[", "i", "]"}], "->", "Infinity"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"i", ",", "1", ",", "k"}], "}"}]}], "]"}]}], 
+    "]"}]}]}]}], "Input",
+ CellChangeTimes->{{3.9582400887366667`*^9, 
+  3.958240095768858*^9}},ExpressionUUID->"e3ddbb69-319f-46b5-be12-\
+c4475f5a3a55"]
+}, Open  ]]
+},
+WindowSize->{1280, 688},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"14.0 for Mac OS X ARM (64-bit) (December 12, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"296a53b6-7b7b-40fa-9bfb-fe0e15231c06"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 557, 17, 99, "Title",ExpressionUUID->"96adc7a1-0188-4a8b-af67-81ac0f4cbdde"],
+Cell[1140, 41, 3053, 90, 104, "Text",ExpressionUUID->"ddffd6b8-8b05-480d-a6d9-518205cc7f35"],
+Cell[4196, 133, 3219, 97, 136, "Input",ExpressionUUID->"e3ddbb69-319f-46b5-be12-c4475f5a3a55"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
