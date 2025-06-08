@@ -214,9 +214,12 @@ Python code for processing and manipulating formal contexts. This is provided as
 
 * `num_cols()`. Returns the number of columns in the matrix.
 
-* `density()`. Returns the density of the matrix, i.e. the proportion of entries which are 1's.
+* `density()`. Returns the density of the matrix, i.e. the proportion of entries which are 1's. See [Demonstration 2](#demonstration-2) for an example.
 
-* `complexity()`. Returns the complexity of the context, i.e. the dimension of the largest subcontext which is a contranomial scale.
+* `complexity()`. Returns the complexity of the context, i.e. the dimension of the largest subcontext which is a contranomial scale. See [Demonstration 2](#demonstration-2) for an example.
+
+    > [!WARNING]
+    > Computing the complexity of a context is a #P-hard problem. You should expect this to take ~exponential time in the size of the matrix.
 
 ### pcbo
 
@@ -251,8 +254,27 @@ GAP code to generate `.dat` files.
 
 **Dependencies** GAP4
 
+The file `fca_matrix.g` contains two important function definitions:
+
+1. `FCAMatrix(G)`. Given a finite group `G`, produces a matrix of 0's and 1's (the reduced context of $\mathsf{Tr}(\mathsf{Sub}(G))$), with the rows sorted in descending lexicographic order.
+2. `PrintDat(m)`. Given a matrix of 0's and 1's, prints a `.dat` representation of the matrix to stdout.
+
+See [Demonstration 1](#demonstration-1) for an example.
+
 ### mathematica
 
 Mathematica notebooks and WolframScript code for various combinatorial computations.
 
 **Dependencies** Mathematica
+
+#### DensityCyclic.nb
+
+Contains code to compute the density of $\mathsf{Tr}([n_1] \times [n_k])$.
+
+#### matrix_to_img.wls
+
+A WolframScript script which takes a matrix of 0's and 1's (in Mathematica format) from stdin and a filepath (as a command line argument), and produces an image of the matrix at that path. Example usage:
+
+```console
+FCA-Homotopical-Combinatorics$ cat "dat/D_n/D_10.dat" | python3 -c "from pycontext.context import *;print(from_dat_stdin().matrix_list())" | sed -e 's/\[/{/g' -e 's/\]/}/g' | wolframscript -f mathematica/matrix_to_img.wls "D_10.pdf"
+```
