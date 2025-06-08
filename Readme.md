@@ -276,5 +276,5 @@ Contains code to compute the density of $\mathsf{Tr}([n_1] \times \dots \times [
 A WolframScript script which takes a matrix of 0's and 1's (in Mathematica format) from stdin and a filepath (as a command line argument), and produces an image of the matrix at that path. Example usage:
 
 ```console
-FCA-Homotopical-Combinatorics$ cat "dat/D_n/D_10.dat" | python3 -c "from pycontext.context import *;print(from_dat_stdin().matrix_list())" | sed -e 's/\[/{/g' -e 's/\]/}/g' | wolframscript -f mathematica/matrix_to_img.wls "D_10.pdf"
+FCA-Homotopical-Combinatorics$ echo 'Read("gap/fca_matrix.g");Print(FCAMatrix(DihedralGroup(20)));' | gap -q | sed -e 's/\[/{/g' -e 's/\]/}/g' | wolframscript -f mathematica/matrix_to_img.wls "D_10.pdf"
 ```
