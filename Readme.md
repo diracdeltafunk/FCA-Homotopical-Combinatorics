@@ -11,6 +11,7 @@ This repository contains code to accompany the paper [Formal Concept Analysis an
   * [dat](#dat)
   * [gap](#gap)
   * [mathematica](#mathematica)
+  * [scripts](#scripts)
 
 ## Demos
 
@@ -256,7 +257,7 @@ GAP code to generate `.dat` files.
 
 The file `fca_matrix.g` contains two important function definitions:
 
-1. `FCAMatrix(G)`. Given a finite group `G`, produces a matrix of 0's and 1's (the reduced context of $\mathsf{Tr}(\mathsf{Sub}(G))$), with the rows sorted in descending lexicographic order.
+1. `FCAMatrix(G)`. Given a finite group `G`, produces a matrix of 0's and 1's (the reduced context of $\mathsf{Tr}(\mathsf{Sub}(G))$), with the rows sorted in descending order when viewed as binary integers with most-significant bit in the last column.
 2. `PrintDat(m)`. Given a matrix of 0's and 1's, prints a `.dat` representation of the matrix to stdout.
 
 See [Demonstration 1](#demonstration-1) for an example.
@@ -278,3 +279,23 @@ A WolframScript script which takes a matrix of 0's and 1's (in Mathematica forma
 ```console
 FCA-Homotopical-Combinatorics$ echo 'Read("gap/fca_matrix.g");Print(FCAMatrix(DihedralGroup(20)));' | gap -q | sed -e 's/\[/{/g' -e 's/\]/}/g' | wolframscript -f mathematica/matrix_to_img.wls "D_10.pdf"
 ```
+
+## scripts
+
+A few bash scripts to make your life easier.
+
+### dat_to_img.sh
+
+**Dependencies** python3, sed, wolframscript
+
+**Usage** `bash scripts/dat_to_img.sh DAT-FILE OUTPUT-FILE`
+
+The file extension of `OUTPUT-FILE` determines the type of image created!
+
+### generate_dats.sh
+
+**Dependencies** GAP4
+
+**Usage** `bash scripts/generate_dats.sh`
+
+Running this script re-generates the `.dat` files provided in the [dat](/dat/) subdirectory.

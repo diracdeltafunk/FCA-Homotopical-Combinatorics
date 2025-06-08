@@ -1,0 +1,1 @@
+cat $1 | python3 -c "from pycontext.context import *; print(from_dat_stdin().matrix_list())" | sed -e 's/\[/{/g' -e 's/\]/}/g' | wolframscript -f mathematica/matrix_to_img.wls $2
