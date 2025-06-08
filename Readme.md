@@ -269,7 +269,7 @@ Mathematica notebooks and WolframScript code for various combinatorial computati
 
 #### DensityCyclic.nb
 
-Contains code to compute the density of $\mathsf{Tr}([n_1] \times [n_k])$.
+Contains code to compute the density of $\mathsf{Tr}([n_1] \times \dots \times [n_k])$.
 
 #### matrix_to_img.wls
 
