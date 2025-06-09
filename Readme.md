@@ -79,9 +79,9 @@ Notes:
 
 ### Demonstration 2
 
-**Requirements:** A working python3 installation.
+**Requirements:** python3 with numpy and scipy >= 1.9.0 installed
 
-**Goal:** Compute the densities and complexities of $\mathsf{Tr}(D_{k})$ for $k = 1, \dots, 10$.
+**Goal:** Compute the densities and complexities of $\mathsf{Tr}(\mathsf{Sub}(D_{k}))$ for $k = 1, \dots, 10$.
 
 In this example, we'll use the `.dat` files included in this repository. We can then analyse these with the provided python code. We make a file called `script.py` with the contents
 
