@@ -26,17 +26,23 @@ class FormalContext:
         """Developer representation of the formal context."""
         return f"FormalContext(matrix={self.matrix.tolist()})"
 
-    def tikz(self, inverted=False, PIXEL_SIZE=0.1):
+    def tikz(self, inverted=False, draw_white=True, PIXEL_SIZE=0.1):
         """Generate a TikZ representation of the formal context.
 
-        If inverted is False, 0s are represented as black squares and 1s as white squares.
-        If inverted is True, 0s are represented as white squares and 1s as black squares.
+        Args:
+            inverted: Bool. If True, 0s are represented as white squares and 1s as black squares.
+            draw_white: Bool. If False, only black squares are drawn.
+            PIXEL_SIZE: Float. The side length of each square in the TikZ picture.
+
+        Returns:
+            A string containing TikZ code.
         """
         tikz_str = "\\begin{tikzpicture}\n"
         for i in range(self.matrix.shape[0]):
             for j in range(self.matrix.shape[1]):
                 color = "white" if (self.matrix[i, j] == 1) != inverted else "black"
-                tikz_str += f"\\fill[{color}] ({round(j * PIXEL_SIZE,2)}, {round(-i * PIXEL_SIZE,2)}) rectangle ++({round(PIXEL_SIZE,2)}, {round(PIXEL_SIZE,2)});\n"
+                if draw_white or color == "black":
+                    tikz_str += f"\\fill[{color}] ({round(j * PIXEL_SIZE,2)}, {round(-i * PIXEL_SIZE,2)}) rectangle ++({round(PIXEL_SIZE,2)}, {round(PIXEL_SIZE,2)});\n"
         tikz_str += "\\end{tikzpicture}"
         return tikz_str
 
