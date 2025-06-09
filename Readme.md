@@ -192,6 +192,10 @@ Python code for processing and manipulating formal contexts. This is provided as
     \end{tikzpicture}
     ```
 
+    This will compile to the following:
+
+    <img width="32" alt="demo" src="https://github.com/user-attachments/assets/bda108bc-80b1-4d72-8adf-c7cc925693fa" />
+
     By default, 0's become black pixels and 1's become white pixels. You can invert the colors by setting `inverted=True`, and you can change the size of the pixels by setting `PIXEL_SIZE`.
 
 > [!WARNING]
