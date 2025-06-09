@@ -44,6 +44,10 @@ FCA-Homotopical-Combinatorics$ gap -q generate_S5_dat.g > S5.dat
 
 Next, we can give this `.dat` file to PCbO to count the number of transfer systems.
 
+> [!TIP]
+> Remember to make sure you have built the pcbo binary before performing the next step!
+> See [here](#building-pcbo) for instructions.
+
 ```console
 FCA-Homotopical-Combinatorics$ pcbo/pcbo S5.dat
 WARNING: Too many attributes and/or objects! Integer overflow may occur; program result is not guaranteed correct.
@@ -230,6 +234,17 @@ A modified version of [PCbO](https://fcalgs.sourceforge.net/pcbo-amai.html) for 
 #### Building PCbO
 
 To build, simply run `make` in the pcbo directory. This should produce an executable called `pcbo`.
+
+You can test if your installation succeeded by checking that $S_4$ has $8691$ transfer systems. Overall, this looks like:
+
+```console
+FCA-Homotopical-Combinatorics$ cd pcbo
+pcbo$ make
+[compiler output]
+pcbo$ cd ..
+FCA-Homotopical-Combinatorics$ pcbo/pcbo dat/S_n/S_4.dat
+8691
+```
 
 #### Usage
 
