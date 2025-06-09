@@ -11,7 +11,7 @@ class FormalContext:
         """Initialize the formal context with a binary matrix.
 
         Args:
-            matrix: A numpy array of 0s and 1s, or None to create empty context
+            matrix: A numpy array (OR list of lists) of 0s and 1s, or None to create empty context
         """
         if matrix is not None:
             self.matrix = np.array(matrix, dtype=int)
