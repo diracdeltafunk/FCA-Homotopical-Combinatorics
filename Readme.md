@@ -33,6 +33,7 @@ To do this, we must run the gap command `PrintDat(FCAMatrix(SymmetricGroup(5)));
 ```GAP
 Read("gap/fca_matrix.g");
 PrintDat(FCAMatrix(SymmetricGroup(5)));
+quit;
 ```
 
 Now we run this GAP script to produce our desired `.dat` file:
