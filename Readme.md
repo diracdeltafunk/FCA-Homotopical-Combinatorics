@@ -175,7 +175,7 @@ Python code for processing and manipulating formal contexts. This is provided as
 
 #### `FormalContext` Member Functions
 
-* `tikz(inverted=False, PIXEL_SIZE=0.1)`. Returns the source code (as a string) for a tikzpicture representing the formal context. Example:
+* `tikz(inverted=False, draw_white=True, PIXEL_SIZE=0.1)`. Returns the source code (as a string) for a tikzpicture representing the formal context. Example:
 
     ```console
     FCA-Homotopical-Combinatorics$ cat "dat/[n]/[2].dat" | python3 -c "from pycontext.context import *; print(from_dat_stdin().tikz())"
@@ -196,7 +196,7 @@ Python code for processing and manipulating formal contexts. This is provided as
 
     <img width="32" alt="demo" src="https://github.com/user-attachments/assets/bda108bc-80b1-4d72-8adf-c7cc925693fa" />
 
-    By default, 0's become black pixels and 1's become white pixels. You can invert the colors by setting `inverted=True`, and you can change the size of the pixels by setting `PIXEL_SIZE`.
+    By default, 0's become black pixels and 1's become white pixels. You can invert the colors by setting `inverted=True`, and you can change the size of the pixels by setting `PIXEL_SIZE`. Setting `draw_white` to `False` only draws black pixels.
 
 > [!WARNING]
 > For large matrices, compiling one of these tikz pictures can easily blow through all of your LaTeX compiler's memory. Tikz is not the right software to use if you want to draw a large image pixel-by-pixel! See the [mathematica](#mathematica) section below for a better way to produce these images.
