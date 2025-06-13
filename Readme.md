@@ -277,7 +277,7 @@ GAP code to generate `.dat` files.
 
 The file `fca_matrix.g` contains two important function definitions:
 
-1. `FCAMatrix(G)`. Given a finite group `G`, produces a matrix of 0's and 1's (the reduced context of $\mathsf{Tr}(\mathsf{Sub}(G))$, with rows sort in descending order when viewed as binary integers with most-significant digit in the last column), with the rows sorted in descending order when viewed as binary integers with most-significant bit in the last column.
+1. `FCAMatrix(G)`. Given a finite group `G`, produces a matrix of 0's and 1's (the reduced context of $\mathsf{Tr}(\mathsf{Sub}(G))$, with rows sort in descending order when viewed as binary integers with most-significant digit in the last column).
 2. `PrintDat(m)`. Given a matrix of 0's and 1's, prints a `.dat` representation of the matrix to stdout.
 
 See [Demonstration 1](#demonstration-1) for an example.
