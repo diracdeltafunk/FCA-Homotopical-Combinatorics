@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      8001,        251]
-NotebookOptionsPosition[      7431,        233]
-NotebookOutlinePosition[      7827,        249]
-CellTagsIndexPosition[      7784,        246]
+NotebookDataLength[     10161,        292]
+NotebookOptionsPosition[      9557,        273]
+NotebookOutlinePosition[      9958,        289]
+CellTagsIndexPosition[      9915,        286]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -24,111 +24,150 @@ Cell[TextData[{
  "Computing Densities for ",
  Cell[BoxData[
   FormBox[
-   RowBox[{
-    RowBox[{
-     RowBox[{
-      RowBox[{"[", 
-       SubscriptBox["n", "1"], "]"}], "\[Cross]"}], "..."}], "\[Cross]", 
-    RowBox[{"[", 
-     SubscriptBox["n", "k"], "]"}]}], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
-  "98121c58-9121-455d-b8f7-1079c45270fb"]
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{
+         RowBox[{"[", 
+           SubscriptBox[
+            StyleBox["n", "TI"], "1"], "]"}], "\[Cross]", "\[CenterEllipsis]",
+          "\[Cross]", 
+         RowBox[{"[", 
+           SubscriptBox[
+            StyleBox["n", "TI"], 
+            StyleBox["k", "TI"]], "]"}]}], TraditionalForm], "errors" -> {}, 
+     "input" -> "[n_1] \\times \\cdots \\times [n_k]", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "4ae7d7d7-c192-48f2-846a-4bd02a3beb31"]
 }], "Title",
- CellChangeTimes->{{3.958239886924759*^9, 3.9582399428764277`*^9}, {
-  3.958240098280129*^9, 
-  3.958240153665036*^9}},ExpressionUUID->"96adc7a1-0188-4a8b-af67-\
+ CellChangeTimes->{{3.958239886924759*^9, 3.958239942876428*^9}, {
+  3.958240098280129*^9, 3.958240153665036*^9}, {3.95927875564342*^9, 
+  3.959278773503776*^9}},ExpressionUUID->"96adc7a1-0188-4a8b-af67-\
 81ac0f4cbdde"],
 
 Cell[TextData[{
- "NumZerosGrid[k] returns a formula for the number of 0\[CloseCurlyQuote]s in \
-the reduced context matrix for the lattice of transfer systems on ",
+ Cell[BoxData[
+  RowBox[{"NumZerosGrid", "[", "k", "]"}]], "InlineCode",ExpressionUUID->
+  "aa25002f-8b17-479f-8365-d19515eb64fd"],
+ " returns a formula for the number of 0\[CloseCurlyQuote]s in the reduced \
+context matrix for the lattice of transfer systems on ",
  Cell[BoxData[
   FormBox[
-   RowBox[{
-    RowBox[{
-     RowBox[{
-      RowBox[{"[", 
-       SubscriptBox["n", "1"], "]"}], "\[Cross]"}], "..."}], "\[Cross]", 
-    RowBox[{"[", 
-     SubscriptBox["n", "k"], "]"}]}], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
-  "fd8d97e0-8d8b-4d60-96de-64f512624278"],
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{
+         RowBox[{"[", 
+           SubscriptBox[
+            StyleBox["n", "TI"], "1"], "]"}], "\[Cross]", "\[CenterEllipsis]",
+          "\[Cross]", 
+         RowBox[{"[", 
+           SubscriptBox[
+            StyleBox["n", "TI"], 
+            StyleBox["k", "TI"]], "]"}]}], TraditionalForm], "errors" -> {}, 
+     "input" -> "[n_1] \\times \\cdots \\times [n_k]", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "f858a5ac-49ce-4951-a109-d886c18b482b"],
  ", in terms of ",
  Cell[BoxData[
   FormBox[
    RowBox[{
-    SubscriptBox["n", "1"], ",", "...", ",", 
-    SubscriptBox["n", "k"]}], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
+    RowBox[{"n", "[", "1", "]"}], ",", "...", ",", 
+    RowBox[{"n", "[", "k", "]"}]}], TraditionalForm]],ExpressionUUID->
   "608431fd-cd7b-416c-8534-5adaaebc7ad4"],
- "\nNumRowsGrid[k] returns a formula for the number of rows in the reduced \
-context matrix for the lattice of transfer systems on ",
+ "\n",
+ Cell[BoxData[
+  RowBox[{"NumRowsGrid", "[", "k", "]"}]], "InlineCode",ExpressionUUID->
+  "2b0a9964-323a-4f93-ac1a-1bc91abe221f"],
+ " returns a formula for the number of rows in the reduced context matrix for \
+the lattice of transfer systems on ",
  Cell[BoxData[
   FormBox[
-   RowBox[{
-    RowBox[{
-     RowBox[{
-      RowBox[{"[", 
-       SubscriptBox["n", "1"], "]"}], "\[Cross]"}], "..."}], "\[Cross]", 
-    RowBox[{"[", 
-     SubscriptBox["n", "k"], "]"}]}], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
-  "5ec73153-601d-48fd-b140-1a19b1a9fc0c"],
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{
+         RowBox[{"[", 
+           SubscriptBox[
+            StyleBox["n", "TI"], "1"], "]"}], "\[Cross]", "\[CenterEllipsis]",
+          "\[Cross]", 
+         RowBox[{"[", 
+           SubscriptBox[
+            StyleBox["n", "TI"], 
+            StyleBox["k", "TI"]], "]"}]}], TraditionalForm], "errors" -> {}, 
+     "input" -> "[n_1] \\times \\cdots \\times [n_k]", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "ba9b5f10-1e24-420f-8da0-142a94581dc0"],
  ", in terms of ",
  Cell[BoxData[
   FormBox[
    RowBox[{
-    SubscriptBox["n", "1"], ",", "...", ",", 
-    SubscriptBox["n", "k"]}], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
+    RowBox[{"n", "[", "1", "]"}], ",", "...", ",", 
+    RowBox[{"n", "[", "k", "]"}]}], TraditionalForm]],ExpressionUUID->
   "62cd430c-c409-4230-ad3e-29d265082d8f"],
- "\nCodensityGrid[k] returns a formula for 1 minus the density of the reduced \
-context matrix for the lattice of transfer systems on ",
+ "\n",
+ Cell[BoxData[
+  RowBox[{"CodensityGrid", "[", "k", "]"}]], "InlineCode",ExpressionUUID->
+  "f2054c77-bbee-4e0d-88fc-0e183c13c8d4"],
+ " returns a formula for 1 minus the density of the reduced context matrix \
+for the lattice of transfer systems on ",
  Cell[BoxData[
   FormBox[
-   RowBox[{
-    RowBox[{
-     RowBox[{
-      RowBox[{"[", 
-       SubscriptBox["n", "1"], "]"}], "\[Cross]"}], "..."}], "\[Cross]", 
-    RowBox[{"[", 
-     SubscriptBox["n", "k"], "]"}]}], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
-  "6b6eecd5-4d14-44b7-bba1-e61ab91135b2"],
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{
+         RowBox[{"[", 
+           SubscriptBox[
+            StyleBox["n", "TI"], "1"], "]"}], "\[Cross]", "\[CenterEllipsis]",
+          "\[Cross]", 
+         RowBox[{"[", 
+           SubscriptBox[
+            StyleBox["n", "TI"], 
+            StyleBox["k", "TI"]], "]"}]}], TraditionalForm], "errors" -> {}, 
+     "input" -> "[n_1] \\times \\cdots \\times [n_k]", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "648b061c-c28f-4c7c-a744-aaee344342ac"],
  ", in terms of ",
  Cell[BoxData[
   FormBox[
    RowBox[{
-    SubscriptBox["n", "1"], ",", "...", ",", 
-    SubscriptBox["n", "k"]}], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
+    RowBox[{"n", "[", "1", "]"}], ",", "...", ",", 
+    RowBox[{"n", "[", "k", "]"}]}], TraditionalForm]],ExpressionUUID->
   "b39c1fa7-7772-4b93-ad97-b24f72951936"],
- "\nLimitingDensityGrid[k] returns the limit as ",
+ "\n",
+ Cell[BoxData[
+  RowBox[{"LimitingDensityGrid", "[", "k", "]"}]], "InlineCode",
+  ExpressionUUID->"5c09899e-862a-4b72-ad06-c4ee69905058"],
+ " returns the limit as ",
  Cell[BoxData[
   FormBox[
-   RowBox[{
-    SubscriptBox["n", "1"], ",", "...", ",", 
-    RowBox[{
-     SubscriptBox["n", "k"], "->", "\[Infinity]"}]}], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
-  "3e257d30-e6b2-4ab6-8167-7f1abe3cb0c6"],
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{
+         SubscriptBox[
+          StyleBox["n", "TI"], "1"], ",", "\[Ellipsis]", ",", 
+         SubscriptBox[
+          StyleBox["n", "TI"], 
+          StyleBox["k", "TI"]], "\[Rule]", "\[Infinity]"}], TraditionalForm], 
+     "errors" -> {}, "input" -> "n_1, \\dots, n_k \\to \\infty", "state" -> 
+     "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "e11de7e1-0025-474c-b4da-1836871da726"],
  " of the density of the reduced context matrix for the the lattice of \
 transfer systems on ",
  Cell[BoxData[
   FormBox[
-   RowBox[{
-    RowBox[{
-     RowBox[{
-      RowBox[{"[", 
-       SubscriptBox["n", "1"], "]"}], "\[Cross]"}], "..."}], "\[Cross]", 
-    RowBox[{"[", 
-     SubscriptBox["n", "k"], "]"}]}], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
-  "053f137f-a5e8-4c49-a7dd-6d8b8684903f"]
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{
+         RowBox[{"[", 
+           SubscriptBox[
+            StyleBox["n", "TI"], "1"], "]"}], "\[Cross]", "\[CenterEllipsis]",
+          "\[Cross]", 
+         RowBox[{"[", 
+           SubscriptBox[
+            StyleBox["n", "TI"], 
+            StyleBox["k", "TI"]], "]"}]}], TraditionalForm], "errors" -> {}, 
+     "input" -> "[n_1] \\times \\cdots \\times [n_k]", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "f9663842-68a5-4d05-bba7-029c356a9956"]
 }], "Text",
- CellChangeTimes->{{3.958239953445702*^9, 3.9582400770327177`*^9}, {
-  3.9582401595257387`*^9, 
-  3.95824024395595*^9}},ExpressionUUID->"ddffd6b8-8b05-480d-a6d9-\
+ CellChangeTimes->{{3.958239953445702*^9, 3.958240077032718*^9}, {
+  3.9582401595257373`*^9, 3.95824024395595*^9}, {3.959278732567937*^9, 
+  3.9592787482663116`*^9}, {3.959278797388372*^9, 3.959278852222026*^9}, {
+  3.9592789157540283`*^9, 
+  3.959278944583324*^9}},ExpressionUUID->"ddffd6b8-8b05-480d-a6d9-\
 518205cc7f35"],
 
 Cell[BoxData[{
@@ -226,13 +265,14 @@ Cell[BoxData[{
        RowBox[{"{", 
         RowBox[{"i", ",", "1", ",", "k"}], "}"}]}], "]"}]}], 
     "]"}]}]}]}], "Input",
+ InitializationCell->True,
  CellChangeTimes->{{3.9582400887366667`*^9, 
   3.958240095768858*^9}},ExpressionUUID->"e3ddbb69-319f-46b5-be12-\
 c4475f5a3a55"]
 }, Open  ]]
 },
 WindowSize->{1280, 688},
-WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowMargins->{{213, Automatic}, {Automatic, -106}},
 FrontEndVersion->"14.0 for Mac OS X ARM (64-bit) (December 12, 2023)",
 StyleDefinitions->"Default.nb",
 ExpressionUUID->"296a53b6-7b7b-40fa-9bfb-fe0e15231c06"
@@ -249,13 +289,12 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 557, 17, 99, "Title",ExpressionUUID->"96adc7a1-0188-4a8b-af67-81ac0f4cbdde"],
-Cell[1140, 41, 3053, 90, 104, "Text",ExpressionUUID->"ddffd6b8-8b05-480d-a6d9-518205cc7f35"],
-Cell[4196, 133, 3219, 97, 136, "Input",ExpressionUUID->"e3ddbb69-319f-46b5-be12-c4475f5a3a55"]
+Cell[580, 22, 849, 21, 100, "Title",ExpressionUUID->"96adc7a1-0188-4a8b-af67-81ac0f4cbdde"],
+Cell[1432, 45, 4860, 125, 112, "Text",ExpressionUUID->"ddffd6b8-8b05-480d-a6d9-518205cc7f35"],
+Cell[6295, 172, 3246, 98, 152, "Input",ExpressionUUID->"e3ddbb69-319f-46b5-be12-c4475f5a3a55",
+ InitializationCell->True]
 }, Open  ]]
 }
 ]
 *)
-
-(* End of internal cache information *)
 
