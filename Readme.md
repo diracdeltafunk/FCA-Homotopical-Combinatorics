@@ -292,6 +292,10 @@ Mathematica notebooks and WolframScript code for various combinatorial computati
 
 Contains code to compute the density of $\mathsf{Tr}([n_1] \times \dots \times [n_k])$.
 
+#### DensityElementaryAbelian.nb
+
+Contains code to compute the density of $\mathsf{Tr}(\mathsf{Sub}(C_p^n))$.
+
 #### matrix_to_img.wls
 
 A WolframScript script which takes a matrix of 0's and 1's (in Mathematica format) from stdin and a filepath (as a command line argument), and produces an image of the matrix at that path. Example usage:
