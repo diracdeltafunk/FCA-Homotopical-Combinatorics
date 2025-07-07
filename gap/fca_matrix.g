@@ -72,6 +72,20 @@ FCAMatrix := function(G)
     return result;
 end;
 
+NumRowsFCAMatrix := function(G)
+    local subgroups, edges, ccedges;
+    subgroups := AllSubgroups(G);
+    edges := Concatenation(List(
+        subgroups,
+        h -> List(
+                Filtered(subgroups, k -> IsSubgroup(k,h) and not h = k),
+                x -> [h,x]
+            )
+    ));
+    ccedges := OrbitsDomain(G, edges, OnTuples);
+    return Length(ccedges);
+end;
+
 # Same as DatToFile but prints to stdout
 PrintDat := function(m)
     local i,j;
