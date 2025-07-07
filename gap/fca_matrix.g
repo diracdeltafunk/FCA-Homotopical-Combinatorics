@@ -47,13 +47,8 @@ FCAMatrix_Abelian := function(G)
     return result;
 end;
 
-# Produces the FCA matrix (list of lists of 0's and 1's) for a group G
-# Sorted
-FCAMatrix := function(G)
-    local subgroups, edges, ccedges, result;
-    if IsAbelian(G) then
-        return FCAMatrix_Abelian(G);
-    fi;
+CCEdges := function(G)
+    local subgroups, edges;
     subgroups := AllSubgroups(G);
     edges := Concatenation(List(
         subgroups,
@@ -62,7 +57,17 @@ FCAMatrix := function(G)
                 x -> [h,x]
             )
     ));
-    ccedges := OrbitsDomain(G, edges, OnTuples);
+    return OrbitsDomain(G, edges, OnTuples);
+end;
+
+# Produces the FCA matrix (list of lists of 0's and 1's) for a group G
+# Sorted
+FCAMatrix := function(G)
+    local subgroups, edges, ccedges, result;
+    if IsAbelian(G) then
+        return FCAMatrix_Abelian(G);
+    fi;
+    ccedges := CCEdges(G);
     result := List(ccedges, es -> List(ccedges,
         fs -> Boole(
                 ForAll(fs, f -> (not IsSubgroup(es[1][1],f[1])) or (not IsSubgroup(es[1][2],f[2])) or IsSubgroup(es[1][1],f[2]))
@@ -73,17 +78,7 @@ FCAMatrix := function(G)
 end;
 
 NumRowsFCAMatrix := function(G)
-    local subgroups, edges, ccedges;
-    subgroups := AllSubgroups(G);
-    edges := Concatenation(List(
-        subgroups,
-        h -> List(
-                Filtered(subgroups, k -> IsSubgroup(k,h) and not h = k),
-                x -> [h,x]
-            )
-    ));
-    ccedges := OrbitsDomain(G, edges, OnTuples);
-    return Length(ccedges);
+    return Length(CCEdges(G));
 end;
 
 # Same as DatToFile but prints to stdout
