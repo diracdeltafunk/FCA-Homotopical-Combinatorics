@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+title: FCA-Homotopical-Combinatorics
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Scott
+    family-names: Balchin
+    email: s.balchin@qub.ac.uk
+    affiliation: Queen's University Belfast
+  - given-names: Ben
+    family-names: Spitz
+    email: benspitz@virginia.edu
+    affiliation: University of Virginia
+repository-code: >-
+  https://github.com/diracdeltafunk/FCA-Homotopical-Combinatorics
+abstract: >-
+  Software tools for Formal Concept Analysis computations in
+  Homotopical Combinatorics
+date-released: '2025-07-16'
