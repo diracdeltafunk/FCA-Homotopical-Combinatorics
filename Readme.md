@@ -13,6 +13,18 @@ This repository contains code to accompany the paper [Formal Concept Analysis an
   * [mathematica](#mathematica)
   * [scripts](#scripts)
 
+Users in academia: if you use the included version of `pcbo` to pursue any research activities which may result in publications, please cite the original authors of PCbO:
+
+> Krajca P., Outrata J., Vychodil V.: Parallel Algorithm for Computing Fixpoints of Galois Connections.
+> Annals of Mathematics and Artificial Intelligence 59(2)(2010), pp. 257–272.
+> DOI 10.1007/s10472–010–9199–5, ISSN 1012–2443 (paper), 1573–7470 (online)
+>
+> Krajca P., Outrata J., Vychodil V.: Parallel Recursive Algorithm for FCA.
+> In: Belohlavek R., Kuznetsov S. O. (Eds.): Proc. CLA 2008, pp. 71–82.
+> CEUR WS, Vol. 433, ISBN 978–80–244–2111–7
+
+You may also cite this repository using the information in [CITATION.cff](CITATION.cff).
+
 ## Demos
 
 > [!NOTE]
