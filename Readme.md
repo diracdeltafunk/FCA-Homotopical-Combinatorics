@@ -25,6 +25,13 @@ Users in academia: if you use the included version of `pcbo` to pursue any resea
 
 You may also cite this repository using the information in [CITATION.cff](CITATION.cff).
 
+## FIMI File Format
+
+PCbO expects as input a file in "FIMI" format (these files are conventionally given the file extension `.dat`). A `.dat` file has the following format:
+1) Each line of the file is a space-separated list of natural numbers, representing an object in the formal context.
+2) Each natural number in the space-separated list represents an attribute the object has, with \texttt{0} being the first attribute.
+
+
 ## Demos
 
 > [!NOTE]
